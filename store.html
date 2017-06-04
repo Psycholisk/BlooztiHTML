@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="Yawmiyati Magazine" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="Yawmiyati Magazine" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+        <!-- CDNs -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,700i" rel="stylesheet">
+        <!-- end CDNs -->
+
+        <!-- build:css main.css -->
+        <link rel="stylesheet" href="css/style.css"/>
+        <!-- endbuild -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    </head>
+    <body class="">
+        <div id="wrapper">
+            <header class="top-header default-padding">
+                <div class="centeredcontainer flex-container">
+                    <a title="Bloozti" class="logo" href="index.html">
+                         <img alt="Bloozti" src="images/logo.png" />
+                    </a>
+                    <div class="burger-toggle mobile-only" onclick="ToggleOpen(this)">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <div class="header-menu flex-container text-uppercase">
+                        <nav class="navigation ">
+                            <a title="Store" class="nav-item" href="shop.html">Store</a>
+                            <a title="Cart" class="nav-item" href="cart.html">Cart</a>
+                        </nav>
+                        <span class="customize-btn">Customize your own</span>
+                    </div>
+                </div>
+            </header>
+
+
+            <div id="container">
+                <!-- Filters -->
+                <aside class="products-filter default-padding">
+                    <div class="centered-container">
+                        <span class="page-title">Store</span>
+                    </div>
+                    <div class="centered-container flex-container space-between">
+                        <div class="input-field keyword-input">
+                            <input class="input" placeholder="Keyword.." />
+                            <span class="add-keyword fonticon-before"></span>
+                        </div>
+                        <div class="input-field checkbox-dropdown custom-dropdown add-arrow" onclick="toggle_custom_dropdown(this, event)">
+                            <span class="title">Type</span>
+                            <ul class="dropdown-content">
+                                <li>
+                                    <input class="input checkbox" type="checkbox" name="productType" id="product-type-1"/>
+                                    <label class="dropdown-field-label" for="product-type-1">T-shirt</label>
+                                </li>
+                                <li>
+                                    <input class="input checkbox" type="checkbox" name="productType" id="product-type-2"/>
+                                    <label class="dropdown-field-label" for="product-type-2">I-shirt</label>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="input-field radio-dropdown custom-dropdown half-native add-arrow"  onclick="toggle_custom_dropdown(this, event)">
+                            <select class="select">
+                                <option value="name">Name</option>
+                                <option value="price">Price</option>
+                                <option value="latest">Latest</option>
+                                <option value="popular">Most Popular</option>
+                            </select>
+                            <ul class="dropdown-content">
+                                <li>
+                                    <input class="input checkbox" type="radio" name="sortType" id="sort-type-1" value="name" checked/>
+                                    <label class="dropdown-field-label" for="sort-type-1" >Name</label>
+                                </li>
+                                <li>
+                                    <input class="input checkbox" type="radio" name="sortType" id="sort-type-2" value="price"/>
+                                    <label class="dropdown-field-label" for="sort-type-2">Price</label>
+                                </li>
+                                <li>
+                                    <input class="input checkbox" type="radio" name="sortType" id="sort-type-3" value="latest"/>
+                                    <label class="dropdown-field-label" for="sort-type-3">Latest</label>
+                                </li>
+                                <li>
+                                    <input class="input checkbox" type="radio" name="sortType" id="sort-type-4" value="popular"/>
+                                    <label class="dropdown-field-label" for="sort-type-4">Most Popular</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+                <aside class="labels-listing default-padding">
+                  <ul class="centered-container text-center">
+                    <li class="keyword-label">Coding<span class="remove-label" onclick="remove_filter_label(this)"></span></li>
+                    <li class="keyword-label">Gaming<span class="remove-label" onclick="remove_filter_label(this)"></span></li>
+                    <li class="keyword-label">T-shirt<span class="remove-label" onclick="remove_filter_label(this)" onclick="remove_filter_label(this)"></span></li>
+                    <li class="keyword-label">I-shirt<span class="remove-label" onclick="remove_filter_label(this)"></span></li>
+                  </ul>
+                </aside>
+                <section class="product-listing-container default-padding">
+
+                  <div class="centered-container flex-container space-between product-listing-content">
+                    <article class="small-article">
+                        <div class="frame" onclick="open_product_gallery()">
+                            <img alt="" class="center-transform" src="images/small-article-1.jpg" />
+                        </div>
+                        <h1 class="title">White Star Wars shirt</h1>
+                        <span class="add-to-cart-action">Add To Cart</span>
+                        <span class="price">25.00$</span>
+                    </article>
+                  </div>
+                </section>
+                <aside class="text-stripe text-center flex-container align-items-center">
+                    <span class="text">Have any questions or concerns?<br><a title="FAQ" class="link" href="faq.html">Check our FAQ</a></span>
+                </aside>
+            </div>
+
+            <footer class="default-padding">
+                <div class="centered-container flex-container space-between align-items-center">
+                    <ul class="sitemap flex-container">
+                        <li><a title="Home" class="site-link" href="index.html">Home</a></li>
+                        <li><a title="Store" class="site-link" href="store.html">Store</a></li>
+                        <li><a title="About" class="site-link" href="about.html">About</a></li>
+                        <li><a title="Contact" class="site-link" href="contact.html">Contact</a></li>
+                        <li><a title="FAQ" class="site-link" href="faq.html">FAQ</a></li>
+                    </ul>
+                    <a title="Instagram" class="instagram-follow fonticon-before center-transform" href="https://instagram.com"></a>
+                    <span class="copyrights">Copyright ©  2016 HowToo.  All Rights Reserved.</span>
+                </div>
+<!--                    <span class="copyrights">Copyright ©  2016 HowToo.  All Rights Reserved.</span>-->
+
+            </footer>
+        </div>
+
+        <!-- build:js scripts.js -->
+        <script src="js/vendors/jquery-1.11.1.min.js"></script>
+<!--        <script src="js/vendors/bootstrap.min.js"></script>-->
+        <script src="js/vendors/swiper.min.js"></script>
+        <script src="js/helpers.js"></script>
+        <script src="js/script.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>

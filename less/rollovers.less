@@ -1,0 +1,79 @@
+//.not-handheld{
+@media (min-width:769px){
+    .customize-btn{
+        &:hover, &:focus{
+            background:@red;
+            color:black;
+        }
+    }
+    .top-header{
+        .customize-btn{
+            &:hover, &:focus{
+                color:#eee;
+            }
+        }
+    }
+    .header-menu {
+        .nav-item{
+            &:hover, &:focus{
+                color:rgba(30, 30, 30, 0.58);
+            }
+        }
+    }
+    .category-article{
+        &:hover, &:focus{
+            .flipper{
+                .transform(rotateY(180deg));
+            }
+        }
+    }
+    .small-article{
+        .frame{
+            &:hover, &:focus{
+                &::after{
+                    .transform(~"translateX(-50%) translateY(-50%) scale(1)");
+                    opacity:1;
+                }
+                &::before{
+                    opacity:1;
+                }
+            }
+        }
+    }
+    
+    .text-stripe{
+        .link{
+            &:hover, &:focus{
+                color:#222;
+                &::after{
+                    background:#222;
+                }
+            }
+        }
+    }
+    .instagram-follow{
+        &:hover, &:focus{
+            &::before{
+                color:#222;
+            }
+        }
+    }
+    .small-article{
+        .add-to-cart-action{
+            &:hover, &:focus{
+                color:@red;
+                &::before{
+                    color:@red;
+                    margin-right:8px;
+                }
+            }
+        }
+    }
+    .keyword-input{
+        .add-keyword{
+            &:hover, &:focus{
+                text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6);
+            }
+        }
+    }
+}

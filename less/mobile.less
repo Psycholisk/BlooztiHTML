@@ -1,0 +1,113 @@
+@media (max-width: 767px){
+    #container{
+        padding-bottom: 140px;
+    }
+    footer{
+        height:140px;
+        text-align: center;
+        &>.flex-container{
+            display: block;
+        }
+        .instagram-follow{
+            position: relative;
+            left:auto;
+            top:0;
+            .transform(none);
+            margin:18px auto;
+            display: block;
+            width:33px;
+            height:33px;
+        }
+        .copyrights{
+            display: block;
+        }
+        .sitemap{
+            justify-content: space-around;
+            padding-top:20px;
+            li{
+                margin-left:0 !important;
+            }
+        }
+    }
+    .default-padding{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .top-header{
+        height:80px;
+        font-size: 20px;
+        .burger-toggle{
+            position: relative;
+            &.open{
+                &~.header-menu{
+                    z-index: 5;
+                    opacity: 1;
+                    visibility: visible;
+                    .transition(~"opacity 0.5s");
+                }
+            }
+        }   
+    }
+    .logo{
+        width:200px;
+    }
+    .header-menu{
+        position: absolute;
+        top:80px;
+        left:0;
+        width: 100%;
+        display: block;
+        text-align: center;
+        z-index: -1;
+        padding:5px 20px 15px;
+        height: auto !important;
+        background: #eee;
+        box-shadow: 0 9px 14px -7px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        visibility: hidden;
+        .transition(~"opacity 0.5s, visibility 0s 0.5s");
+        .nav-item{
+            display: block;
+            padding:20px 0;
+            width: 100%;
+            &:nth-of-type(n + 2){
+                border-top:1px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+        .customize-btn{
+            margin-top:5px;
+            height: 50px;
+            line-height: 48px;
+        }
+    }
+    .home-listing{
+        font-size: 18px;
+    }
+    .small-article{
+        .frame{
+            height:~"calc(((100vw - 60px) / 3) * 1.25)";
+        }
+    }
+    .category-article{
+        .back-face{
+            .transform(none);
+            background:transparent;
+            z-index: 2;
+        }
+        .title{
+            background:rgba(255,255, 255, 0.5);
+         //   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.0) 100%);
+            position:absolute;
+            width:100%;
+            bottom:0;
+            left:0;
+            font-size: 1.3em;
+        }
+        .description{
+            display: none;
+        }
+    }
+    .text-stripe{
+        font-size: 25px;
+    }
+}
