@@ -34,7 +34,8 @@
         padding-right: 10px;
     }
     .top-header{
-        height:80px;
+        // height:80px;
+            height:70px;
         font-size: 20px;
         .burger-toggle{
             position: relative;
@@ -46,14 +47,38 @@
                     .transition(~"opacity 0.5s");
                 }
             }
-        }   
+        }
     }
     .logo{
-        width:200px;
+        width:180px;
     }
     .header-menu{
+        top:70px;
+    }
+    .slideshow{
+        max-height: ~"calc(100vh - 70px)";
+        .slide{
+            .slide-content{
+                left:10px;
+                .description{
+                    padding-top:10px;
+                }
+                .btn{
+                    margin-top:15px;
+                }
+                &.align-right{
+                    left: auto;
+                    right: 10px;
+                }
+            }
+        }
+    }
+    // .logo{
+    //     width:200px;
+    // }
+    .header-menu{
         position: absolute;
-        top:80px;
+        top:70px;
         left:0;
         width: 100%;
         display: block;
@@ -109,5 +134,53 @@
     }
     .text-stripe{
         font-size: 25px;
+    }
+    .page-title{
+        padding:25px 0;
+        font-size: 38px;
+    }
+    .products-filter{
+        .input-field{
+            width:~"calc((100% - 20px) / 2)";
+            &.keyword-input{
+                width:100%;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .labels-listing{
+        margin-top:30px;
+    }
+    .product-listing-container{
+        padding-top: 50px;
+        padding-bottom: 70px;
+        font-size: 18px;
+    }
+    .slideshow{
+        font-size: 16px;
+        max-height: ~"calc(100vh - 80px)";
+    }
+    .featured-box{
+        min-width:0;
+        width:100% !important;
+        max-width: 100% !important;
+        &:nth-of-type(n + 2){
+            margin-top:5px;
+        }
+        .frame{
+            &::before{
+                background:rgba(255, 255, 255, 0.3);
+            }
+        }
+        .content{
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+        &.invert{
+            .frame{
+                &::before{
+                    background:rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
     }
 }

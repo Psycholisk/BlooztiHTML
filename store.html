@@ -4,13 +4,14 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="Yawmiyati Magazine" />
+        <meta name="description" content="Bloozti" />
         <meta name="keywords" content="" />
-        <meta name="author" content="Yawmiyati Magazine" />
+        <meta name="author" content="Bloozti" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <link rel="shortcut icon" href="images/favicon.png"/>
 
         <!-- CDNs -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,700i" rel="stylesheet">
@@ -20,10 +21,12 @@
         <link rel="stylesheet" href="css/style.css"/>
         <!-- endbuild -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-
+        <title>Bloozti - Store</title>
     </head>
     <body class="">
         <div id="wrapper">
+            <span class="popupoverlay" onclick="ClosePopup()"></span>
+
             <header class="top-header default-padding">
                 <div class="centeredcontainer flex-container">
                     <a title="Bloozti" class="logo" href="index.html">
@@ -42,7 +45,7 @@
                             <a title="Store" class="nav-item" href="shop.html">Store</a>
                             <a title="Cart" class="nav-item" href="cart.html">Cart</a>
                         </nav>
-                        <span class="customize-btn">Customize your own</span>
+                        <span class="customize-btn">Tailor your own</span>
                     </div>
                 </div>
             </header>
@@ -112,13 +115,85 @@
 
                   <div class="centered-container flex-container space-between product-listing-content">
                     <article class="small-article">
-                        <div class="frame" onclick="open_product_gallery()">
+                        <div class="frame resize-inner-image" onclick="open_product_details(0)">
                             <img alt="" class="center-transform" src="images/small-article-1.jpg" />
                         </div>
                         <h1 class="title">White Star Wars shirt</h1>
                         <span class="add-to-cart-action">Add To Cart</span>
                         <span class="price">25.00$</span>
                     </article>
+                    <article class="small-article">
+                      <div class="frame resize-inner-image" onclick="open_product_details(1)">
+                          <img alt="" class="center-transform" src="images/small-article-1.jpg" />
+                      </div>
+                      <h1 class="title">White Star Wars shirt</h1>
+                      <span class="add-to-cart-action">Add To Cart</span>
+                      <span class="price">25.00$</span>
+                    </article>
+                    <article class="small-article">
+                        <div class="frame resize-inner-image" onclick="open_product_details(2)">
+                            <img alt="" class="center-transform" src="images/small-article-1.jpg" />
+                        </div>
+                        <h1 class="title">White Star Wars shirt</h1>
+                        <span class="add-to-cart-action">Add To Cart</span>
+                        <span class="price">25.00$</span>
+                    </article>
+                    <article class="small-article">
+                      <div class="frame resize-inner-image" onclick="open_product_details(3)">
+                          <img alt="" class="center-transform" src="images/small-article-1.jpg" />
+                      </div>
+                      <h1 class="title">White Star Wars shirt</h1>
+                      <span class="add-to-cart-action">Add To Cart</span>
+                      <span class="price">25.00$</span>
+                    </article>
+                    <article class="small-article">
+                        <div class="frame resize-inner-image" onclick="open_product_details(4)">
+                            <img alt="" class="center-transform" src="images/small-article-1.jpg" />
+                        </div>
+                        <h1 class="title">White Star Wars shirt</h1>
+                        <span class="add-to-cart-action">Add To Cart</span>
+                        <span class="price">25.00$</span>
+                    </article>
+                      <article class="small-article">
+                          <div class="frame resize-inner-image" onclick="open_product_details(5)">
+                              <img alt="" class="center-transform" src="images/small-article-1.jpg" />
+                          </div>
+                          <h1 class="title">White Star Wars shirt</h1>
+                          <span class="add-to-cart-action">Add To Cart</span>
+                          <span class="price">25.00$</span>
+                      </article>
+                      <article class="small-article">
+                        <div class="frame resize-inner-image" onclick="open_product_details(6)">
+                            <img alt="" class="center-transform" src="images/small-article-1.jpg" />
+                        </div>
+                        <h1 class="title">White Star Wars shirt</h1>
+                        <span class="add-to-cart-action">Add To Cart</span>
+                        <span class="price">25.00$</span>
+                      </article>
+                      <article class="small-article">
+                          <div class="frame resize-inner-image" onclick="open_product_details(7)">
+                              <img alt="" class="center-transform" src="images/small-article-1.jpg" />
+                          </div>
+                          <h1 class="title">White Star Wars shirt</h1>
+                          <span class="add-to-cart-action">Add To Cart</span>
+                          <span class="price">25.00$</span>
+                      </article>
+                      <article class="small-article">
+                        <div class="frame resize-inner-image" onclick="open_product_details(8)">
+                            <img alt="" class="center-transform" src="images/small-article-1.jpg" />
+                        </div>
+                        <h1 class="title">White Star Wars shirt</h1>
+                        <span class="add-to-cart-action">Add To Cart</span>
+                        <span class="price">25.00$</span>
+                      </article>
+                      <article class="small-article">
+                          <div class="frame resize-inner-image" onclick="open_product_details(9)">
+                              <img alt="" class="center-transform" src="images/small-article-1.jpg" />
+                          </div>
+                          <h1 class="title">White Star Wars shirt</h1>
+                          <span class="add-to-cart-action">Add To Cart</span>
+                          <span class="price">25.00$</span>
+                      </article>
                   </div>
                 </section>
                 <aside class="text-stripe text-center flex-container align-items-center">
@@ -141,6 +216,42 @@
 <!--                    <span class="copyrights">Copyright ©  2016 HowToo.  All Rights Reserved.</span>-->
 
             </footer>
+            <div class="popup generalpopup">
+                <span class="entrance"></span>
+                <section id="product-details-popup" class="product-details-popup popupcontainer">
+                    <span class="closepopup" onclick="ClosePopup()"></span>
+                    <div class="popup-content flex-container">
+                        <div class="product-swiper swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide slide resize-inner-image">
+                                    <img src="images/small-article-1.jpg" alt="" class="center-transform">
+                                </div>
+                                <div class="swiper-slide slide resize-inner-image">
+                                    <img src="images/small-article-2.jpg" alt="" class="center-transform">
+                                </div>
+                                <div class="swiper-slide slide resize-inner-image">
+                                    <img src="images/small-article-3.jpg" alt="" class="center-transform">
+                                </div>
+                                <div class="swiper-slide slide resize-inner-image">
+                                    <img src="images/small-article-4.jpg" alt="" class="center-transform">
+                                </div>
+                            </div>
+                            <div class="arrows left-arrow fonticon-before inactive"></div>
+                            <div class="arrows right-arrow fonticon-before"></div>
+                        </div>
+                        <div class="product-info">
+                            <h1 class="title">White Yoda Shirt</h1>
+                            <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eget leo tellus.</span>
+                            <span class="categories">Movies, Cartoon</span>
+                            <div class="stick-to-bottom flex-container space-between">
+                                <a href="" class="btn ghost-btn ghost-red">Add To Cart</a>
+                                <span class="price">19.00$</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
         </div>
 
         <!-- build:js scripts.js -->

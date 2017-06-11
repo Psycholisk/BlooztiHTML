@@ -40,7 +40,7 @@
             }
         }
     }
-    
+
     .text-stripe{
         .link{
             &:hover, &:focus{
@@ -73,6 +73,93 @@
         .add-keyword{
             &:hover, &:focus{
                 text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6);
+            }
+        }
+    }
+    .slideshow{
+        .slideshow-navigation{
+            li:not(.active){
+                &:hover, &:focus{
+                    background:rgba(221,221,221,0.7);
+                }
+            }
+        }
+    }
+    .ghost-btn{
+        &:hover, &:focus{
+            background:white;
+            color:#111;
+        }
+        &.ghost-black{
+            &:hover, &:focus{
+                background:#111;
+                color:white;
+            }
+        }
+        &.ghost-red{
+            &:hover, &:focus{
+                background:@red;
+                color:white;
+            }
+        }
+    }
+    .home-categories{
+        .category{
+            a{
+                &:hover, &:focus{
+                    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+    }
+    .featured-box{
+        &:hover, &:focus{
+            .frame{
+                &::before{
+                    background:rgba(255, 255, 255, 0.4);
+                }
+            }
+            .content{
+                text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+            }
+            &.invert{
+                .frame{
+                    &::before{
+                        background:rgba(0, 0, 0, 0.4);
+                    }
+                }
+            }
+        }
+
+    }
+    .random-article{
+        &:hover, &:focus{
+            .content{
+                .title{
+                    color:white;
+                }
+                &::before{
+                    height:100%;
+                }
+            }
+        }
+    }
+    .product-details-popup{
+        .product-swiper{
+            .arrows{
+                &:hover, &:focus{
+                    background:rgba(230, 230, 230, 0.85);
+                    &.left-arrow{
+                        &::before{
+                            left:~"calc(50% - 5px)";
+                        }
+                    }
+                    &.right-arrow{
+                        &::before{
+                            left:~"calc(50% + 5px)";
+                        }
+                    }
+                }
             }
         }
     }

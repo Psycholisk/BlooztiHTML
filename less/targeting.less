@@ -9,13 +9,24 @@
     }
 }
 @media (max-width:1200px){
-    
+
     .category-article{
         height:270px;
     }
 }
+@media (max-width:1180px){
+    .random-article{
+        width:~"calc((100% - 40px) / 3)";
+        .frame{
+            max-height: ~"calc(((100vw - 70px) / 3) * 1.166)";
+        }
+        &:nth-of-type(4){
+            display: none;
+        }
+    }
+}
 @media (max-width:1075px){
-    
+
     .small-article{
         width:~"calc((100% - 60px) / 4)";
         .frame{
@@ -35,10 +46,17 @@
             }
         }
     }
+    .product-listing-container{
+        .small-article{
+            &:nth-of-type(n+5){
+                margin-top:30px;
+            }
+        }
+    }
 }
 
 @media (max-width:975px){
-    
+
     .small-article{
         width:~"calc((100% - 40px) / 3)";
         .frame{
@@ -66,6 +84,13 @@
             }
         }
     }
+    .product-listing-container{
+        .small-article{
+            &:nth-of-type(n+4){
+                margin-top:30px;
+            }
+        }
+    }
 }
 
 @media (max-width:900px){
@@ -81,10 +106,29 @@
         }
     }
 }
+@media (max-width:860px){
+    .random-article{
+        width:~"calc((100% - 20px) / 2)";
+        .frame{
+            max-height: ~"calc(((100vw - 50px) / 2) * 1.166)";
+        }
+        &:nth-of-type(n + 3){
+            margin-top:20px;
+        }
+        &:nth-of-type(4){
+            display: block;
+        }
+    }
+}
 
 @import 'mobile';
 
 @media (max-width: 700px){
+    .product-listing-container, .home-listing{
+        &>.flex-container{
+            justify-content: space-around;
+        }
+    }
     .small-article{
         width:~"calc((100% - 20px) / 2)";
         .frame{
@@ -100,22 +144,68 @@
             margin-top:20px;
         }
     }
+    .product-listing-container{
+        .small-article{
+            &:nth-of-type(n+3){
+                margin-top:30px;
+            }
+        }
+    }
+    .product-details-popup{
+        padding-left:30px !important;
+        padding-right:30px !important;
+        .product-swiper{
+            width:320px;
+            max-width: 100%;
+            max-height: ~"calc((100vw - 80px) * 1.16)";
+        }
+        .popup-content{
+            width:380px;
+        }
+        .product-info{
+            max-width:100%;
+            width:100%;
+            padding: 10px 0 0;
+            .title{
+                padding:20px 10px 15px 0;
+            }
+            .stick-to-bottom{
+                position: relative;
+                left:auto;
+                margin-top:30px;
+                width:100%;
+            }
+        }
+    }
+}
+@media (max-width:550px){
+    .random-article{
+        width:100%;
+        .frame{
+            max-height: ~"calc((100vw - 20px) * 1.6)";
+        }
+        &:nth-of-type(n + 2){
+            margin-top:20px;
+        }
+    }
 }
 @media (max-width: 475px){
     .text-stripe{
         font-size: 20px;
     }
     .home-listing{
-        padding-bottom: 10px;
-        &>.flex-container{
-            justify-content: space-around;
-        }
+        // &.home-latest{
+        //     padding-bottom: 10px;
+        // }
         .home-section-title{
-            font-size: 1.3em;
+            font-size: 1.6em;
         }
         &+.text-stripe{
             margin-top:30px;
         }
+    }
+    .how-it-works{
+        font-size: 1.6em;
     }
     .small-article{
         width:100%;
@@ -132,16 +222,45 @@
             margin-top:20px;
         }
     }
+    .product-listing-container{
+        padding-top:40px;
+        padding-bottom: 50px;
+        .small-article{
+            &:nth-of-type(n+2){
+                margin-top:30px;
+            }
+        }
+    }
 }
 @media (max-width: 500px){
-    .top-header{
-        height:70px;
-       
+
+    .slideshow{
+        font-size: 14px;
     }
-    .logo{
-        width:180px;
-    }
-    .header-menu{
-        top:70px;
+    // .top-header{
+    //     height:70px;
+    //
+    // }
+    // .logo{
+    //     width:180px;
+    // }
+    // .header-menu{
+    //     top:70px;
+    // }
+    // .slideshow{
+    //     max-height: ~"calc(100vh - 70px)";
+    // }
+}
+
+// Target height
+
+@media (max-height: 500px){
+    .slideshow{
+        font-size: 14px;
+        .slide{
+            .slide-content{
+                bottom:110px
+            }
+        }
     }
 }

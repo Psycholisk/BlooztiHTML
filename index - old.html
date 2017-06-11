@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="Bloozti" />
+        <meta name="keywords" content="" />
+        <meta name="author" content="Bloozti" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+        <!-- CDNs -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,700i" rel="stylesheet">
+        <!-- end CDNs -->
+
+        <!-- build:css main.css -->
+        <link rel="stylesheet" href="css/style.css"/>
+        <!-- endbuild -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+    </head>
+    <body class="">
+        <div id="wrapper">
+            <header class="top-header default-padding">
+                <div class="centeredcontainer flex-container">
+                    <a title="Bloozti" class="logo" href="index.html">
+                         <img alt="Bloozti" src="images/logo.png" />
+                    </a>
+                    <div class="burger-toggle mobile-only" onclick="ToggleOpen(this)">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <div class="header-menu flex-container text-uppercase">
+                        <nav class="navigation ">
+                            <a title="Store" class="nav-item" href="store.html">Store</a>
+                            <a title="Cart" class="nav-item" href="cart.html">Cart</a>
+                        </nav>
+                        <span class="customize-btn">Customize your own</span>
+                    </div>
+                </div>
+            </header>
+
+
+            <div id="container">
+                <section class="slideshow">
+                    <div class="slideshow-container swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide slide" style="background-image:url('images/slideshow1.jpg')" data-slide-index="0">
+                                <div class="slide-content">
+                                    <span class="title">We have launched our online store!</span>
+                                    <span class=""></span>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slide" style="background-image:url('images/slideshow2.jpg')" data-slide-index="1">
+                            </div>
+                            <div class="swiper-slide slide" style="background-image:url('images/slideshow3.jpg')" data-slide-index="2">
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="slideshow-navigation">
+                        <li class="active" data-nav-index="0">Launching</li>
+                        <li data-nav-index="1">Promo</li>
+                        <li data-nav-index="2">Customize</li>
+                    </ul>
+                </section>
+                <!-- Popular products listing -->
+                <section class="home-listing default-padding home-popular">
+                    <h1 class="home-section-title">Popular Products</h1>
+                    <div class="centered-container flex-container space-between">
+                        <article class="small-article">
+                            <div class="frame" onclick="open_product_gallery()">
+                                <img alt="" class="center-transform" src="images/small-article-1.jpg" />
+                            </div>
+                            <h1 class="title">White Star Wars shirt</h1>
+                            <span class="add-to-cart-action">Add To Cart</span>
+                            <span class="price">25.00$</span>
+                        </article>
+                        <article class="small-article">
+                            <div class="frame" onclick="open_product_gallery()">
+                                <img alt="" class="center-transform" src="images/small-article-2.jpg" />
+                            </div>
+                            <h1 class="title">White Star Wars shirt</h1>
+                            <span class="add-to-cart-action">Add To Cart</span>
+                            <span class="price">25.00$</span>
+                        </article>
+                        <article class="small-article">
+                            <div class="frame" onclick="open_product_gallery()">
+                                <img alt="" class="center-transform" src="images/small-article-3.jpg" />
+                            </div>
+                            <h1 class="title">White Star Wars shirt</h1>
+                            <span class="add-to-cart-action">Add To Cart</span>
+                            <span class="price">25.00$</span>
+                        </article>
+                        <article class="small-article">
+                            <div class="frame" onclick="open_product_gallery()">
+                                <img alt="" class="center-transform" src="images/small-article-4.jpg" />
+                            </div>
+                            <h1 class="title">White Star Wars shirt</h1>
+                            <span class="add-to-cart-action">Add To Cart</span>
+                            <span class="price">25.00$</span>
+                        </article>
+                        <article class="small-article">
+                            <div class="frame" onclick="open_product_gallery()">
+                                <img alt="" class="center-transform" src="images/small-article-5.jpg" />
+                            </div>
+                            <h1 class="title">White Star Wars shirt</h1>
+                            <span class="add-to-cart-action">Add To Cart</span>
+                            <span class="price">25.00$</span>
+                        </article>
+                        <article class="small-article">
+                            <div class="frame" onclick="open_product_gallery()">
+                                <img alt="" class="center-transform" src="images/small-article-2.jpg" />
+                            </div>
+                            <h1 class="title">White Star Wars shirt</h1>
+                            <span class="add-to-cart-action">Add To Cart</span>
+                            <span class="price">25.00$</span>
+                        </article>
+                    </div>
+                </section>
+                <!-- Categories listing -->
+                <section class="home-listing default-padding home-categories">
+                    <h1 class="home-section-title">Popular Categores</h1>
+                    <div class="centered-container flex-container space-between">
+                        <article class="category-article">
+                            <a title="Sports" class="flipper" href="store.html">
+                                <div class="front-face" style="background-image:url('images/category-1.jpg')">
+                                </div>
+                                <div class="back-face">
+                                    <h1 class="title">Sports</h1>
+                                    <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus est eu pulvinar sodales. Mauris sed leo id sem mollis dapibus. Nullam turpis eros, elementum vel pellentesque non, facilisis vel orci. Morbi et condimentum ligula</span>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="category-article">
+                            <a title="Sports" class="flipper" href="store.html">
+                                <div class="front-face" style="background-image:url('images/category-2.jpg')">
+                                </div>
+                                <div class="back-face">
+                                    <h1 class="title">Quotes</h1>
+                                    <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus est eu pulvinar sodales. Mauris sed leo id sem mollis dapibus. Nullam turpis eros, elementum vel pellentesque non, facilisis vel orci. Morbi et condimentum ligula</span>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="category-article">
+                            <a title="Sports" class="flipper" href="store.html">
+                                <div class="front-face" style="background-image:url('images/category-3.jpg')">
+                                </div>
+                                <div class="back-face">
+                                    <h1 class="title">Movies</h1>
+                                    <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus est eu pulvinar sodales. Mauris sed leo id sem mollis dapibus. Nullam turpis eros, elementum vel pellentesque non, facilisis vel orci. Morbi et condimentum ligula</span>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="category-article">
+                            <a title="Sports" class="flipper" href="store.html">
+                                <div class="front-face" style="background-image:url('images/category-4.jpg')">
+                                </div>
+                                <div class="back-face">
+                                    <span class="title">Music</span>
+                                    <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus est eu pulvinar sodales. Mauris sed leo id sem mollis dapibus. Nullam turpis eros, elementum vel pellentesque non, facilisis vel orci. Morbi et condimentum ligula</span>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="category-article">
+                            <a title="Sports" class="flipper" href="store.html">
+                                <div class="front-face" style="background-image:url('images/category-5.jpg')">
+                                </div>
+                                <div class="back-face">
+                                    <h1 class="title">Art</h1>
+                                    <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus est eu pulvinar sodales. Mauris sed leo id sem mollis dapibus. Nullam turpis eros, elementum vel pellentesque non, facilisis vel orci. Morbi et condimentum ligula</span>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="category-article">
+                            <a title="Sports" class="flipper" href="store.html">
+                                <div class="front-face" style="background-image:url('images/category-2.jpg')">
+                                </div>
+                                <div class="back-face">
+                                    <h1 class="title">Quotes</h1>
+                                    <span class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus est eu pulvinar sodales. Mauris sed leo id sem mollis dapibus. Nullam turpis eros, elementum vel pellentesque non, facilisis vel orci. Morbi et condimentum ligula</span>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </section>
+                <!-- Latest products listing -->
+                <section class="home-listing default-padding home-latest">
+                    <h1 class="home-section-title">Latest Products</h1>
+                    <div class="centered-container flex-container space-between">
+                        <article class="small-article">
+                            <div class="frame" onclick="open_product_gallery()">
+                                <img alt="" class="center-transform" src="images/small-article-6.jpg" />
+                            </div>
+                            <h1 class="title">White Star Wars shirt</h1>
+                            <span class="add-to-cart-action">Add To Cart</span>
+                            <span class="price">25.00$</span>
+                        </article>
+                        <article class="small-article">
+                            <div class="frame" onclick="open_product_gallery()">
+                                <img alt="" class="center-transform" src="images/small-article-7.jpeg" />
+                            </div>
+                            <h1 class="title">White Star Wars shirt</h1>
+                            <span class="add-to-cart-action">Add To Cart</span>
+                            <span class="price">25.00$</span>
+                        </article>
+                        <article class="small-article">
+                            <div class="frame" onclick="open_product_gallery()">
+                                <img alt="" class="center-transform" src="images/small-article-8.jpg" />
+                            </div>
+                            <h1 class="title">White Star Wars shirt</h1>
+                            <span class="add-to-cart-action">Add To Cart</span>
+                            <span class="price">25.00$</span>
+                        </article>
+                        <article class="small-article">
+                            <div class="frame" onclick="open_product_gallery()">
+                                <img alt="" class="center-transform" src="images/small-article-9.jpg" />
+                            </div>
+                            <h1 class="title">White Star Wars shirt</h1>
+                            <span class="add-to-cart-action">Add To Cart</span>
+                            <span class="price">25.00$</span>
+                        </article>
+                        <article class="small-article">
+                            <div class="frame" onclick="open_product_gallery()">
+                                <img alt="" class="center-transform" src="images/small-article-10.jpeg" />
+                            </div>
+                            <h1 class="title">White Star Wars shirt</h1>
+                            <span class="add-to-cart-action">Add To Cart</span>
+                            <span class="price">25.00$</span>
+                        </article>
+                        <article class="small-article">
+                            <div class="frame" onclick="open_product_gallery()">
+                                <img alt="" class="center-transform" src="images/small-article-6.jpg" />
+                            </div>
+                            <h1 class="title">White Star Wars shirt</h1>
+                            <span class="add-to-cart-action">Add To Cart</span>
+                            <span class="price">25.00$</span>
+                        </article>
+                    </div>
+                </section>
+                <aside class="text-stripe text-center flex-container align-items-center">
+                    <span class="text">Have any questions or concerns?<br><a title="FAQ" class="link" href="faq.html">Check our FAQ</a></span>
+                </aside>
+            </div>
+
+            <footer class="default-padding">
+                <div class="centered-container flex-container space-between align-items-center">
+                    <ul class="sitemap flex-container">
+                        <li><a title="Home" class="site-link" href="index.html">Home</a></li>
+                        <li><a title="Store" class="site-link" href="store.html">Store</a></li>
+                        <li><a title="About" class="site-link" href="about.html">About</a></li>
+                        <li><a title="Contact" class="site-link" href="contact.html">Contact</a></li>
+                        <li><a title="FAQ" class="site-link" href="faq.html">FAQ</a></li>
+                    </ul>
+                    <a title="Instagram" class="instagram-follow fonticon-before center-transform" href="https://instagram.com"></a>
+                    <span class="copyrights">Copyright ©  2016 HowToo.  All Rights Reserved.</span>
+                </div>
+<!--                    <span class="copyrights">Copyright ©  2016 HowToo.  All Rights Reserved.</span>-->
+
+            </footer>
+        </div>
+
+        <!-- build:js scripts.js -->
+        <script src="js/vendors/jquery-1.11.1.min.js"></script>
+<!--        <script src="js/vendors/bootstrap.min.js"></script>-->
+        <script src="js/vendors/swiper.min.js"></script>
+        <script src="js/helpers.js"></script>
+        <script src="js/script.js"></script>
+        <!-- endbuild -->
+    </body>
+</html>
