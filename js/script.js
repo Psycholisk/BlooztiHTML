@@ -343,6 +343,7 @@ function open_listing_popup(listingType){
      //   initialize_product_swiper();
         OpenPopup();
     }
+    
 }
 // function OpenYoutubeVideo(url, autoplay){
 //     autoplay = autoplay || false;
