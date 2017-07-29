@@ -66,43 +66,8 @@ $(document).ready(function(){
 
     /************** Swiper functions ****************/
     start_slideshow_animation('.slideshow-container', 10000);
-    // if ($('.slideshow-container .swiper-slide').length > 1) {
-    //     homeslideshowswiper = new Swiper('.slideshow-container', {
-    //         speed: 1200,
-    //         slidesPerView: 1,
-    //         loopAdditionalSlides:-1,
-    //         loop:true,
-    //         autoplay:10000,
-    //         preload:true,
-    //         effect:'fade',
-    //         preventClicks:true,
-    //         preventClicksPropagation:false,
-    //         simulateTouch:false,
-    //         onInit:function(swiper){
-    //             var activeIndex = $('.slideshow-container .swiper-slide-active').attr('data-slide-index');
-    //             $('.slideshow-navigation li').removeClass('active');
-    //             $('.slideshow-navigation li[data-nav-index="' + activeIndex + '"]').addClass('active');
-    //
-    //             $('.slideshow-navigation li').click(function(){
-    //                 if(!$(this).hasClass('active')){
-    //                     var clickedIndex = $(this).attr('data-nav-index');
-    //                  //   clickedIndex = (clickedIndex == ($('.slideshow-container .swiper-slide').not('.swiper-slide-duplicate').length - 1) ? 0 : parseInt(clickedIndex + 1));
-    //                     console.log(clickedIndex);
-    //                     homeslideshowswiper.slideTo(clickedIndex);
-    //                 }
-    //             });
-    //         },
-    //         onSlideChangeStart: function (swiper) {
-    //             var activeIndex = $('.slideshow-container .swiper-slide-active').attr('data-slide-index');
-    //             $('.slideshow-navigation li').removeClass('active');
-    //             $('.slideshow-navigation li[data-nav-index="' + activeIndex + '"]').addClass('active');
-    //             swiper.startAutoplay();
-    //         },
-    //         onSlideChangeEnd: function (swiper) {
-    //             swiper.startAutoplay();
-    //         }
-    //     });
-    // }
+
+    init_interest_swiper();
     /************ END Swiper functions **************/
 
     /************ Capture document click **************/
@@ -207,6 +172,12 @@ $(document).ready(function(){
 
 });
 //******* FUNCTIONS HERE *******//
+function add_to_cart(){
+    $('.notification-popup').addClass('checkout-notification').addClass('open');
+    setTimeout(function(){
+        $('.notification-popup').removeClass('open');
+    }, 4000);
+}
 function start_slideshow_animation(container, delay){
     var slide_count = $(container + ' .slide').length;
     slideshowObj = {container:container, delay:delay};
@@ -320,6 +291,101 @@ function initialize_product_swiper(){
         });
     }
 }
+
+function initial_popup_listing_swiper(){
+    if ($('.popup-listing-swiper .swiper-slide').length > 1) {
+        popup_listing_swiper = new Swiper('.popup-listing-swiper', {
+            speed: 1200,
+            slidesPerView: 5,
+            loopAdditionalSlides:-1,
+            preload:true,
+            spaceBetween: 20,
+            resistanceRatio:0.01,
+            breakpoints: {
+                450: {
+                    slidesPerView: 1
+                },
+                750: {
+                    slidesPerView: 2
+                },
+                1055: {
+                    slidesPerView: 3
+                },
+                1355: {
+                    slidesPerView: 4
+                }
+           },
+         //   simulateTouch:false,
+            onInit:function(swiper){
+               $('.listing-popup .left-arrow').click(function(){
+                   swiper.slidePrev();
+               });
+               $('.listing-popup .right-arrow').click(function(){
+                   swiper.slideNext();
+               });
+            },
+            onSlideChangeStart: function (swiper) {
+                if(swiper.isEnd){
+                    $('.listing-popup .right-arrow').addClass('inactive');
+                }else{
+                    $('.listing-popup .right-arrow').removeClass('inactive');
+                }
+                if(swiper.isBeginning){
+                    $('.listing-popup .left-arrow').addClass('inactive');
+                }else{
+                    $('.listing-popup .left-arrow').removeClass('inactive');
+                }
+            }
+        });
+    }
+}
+function init_interest_swiper(){
+    if ($('.interest-swiper .swiper-slide').length > 1) {
+        popup_listing_swiper = new Swiper('.interest-swiper', {
+            speed: 1200,
+            slidesPerView: 5,
+            loopAdditionalSlides:-1,
+            preload:true,
+            spaceBetween: 20,
+            resistanceRatio:0.01,
+            breakpoints: {
+                450: {
+                    slidesPerView: 1
+                },
+                750: {
+                    slidesPerView: 2
+                },
+                1055: {
+                    slidesPerView: 3
+                },
+                1355: {
+                    slidesPerView: 4
+                }
+           },
+         //   simulateTouch:false,
+            onInit:function(swiper){
+               $('.cart-interest-list .left-arrow').click(function(){
+                   swiper.slidePrev();
+               });
+               $('.cart-interest-list .right-arrow').click(function(){
+                   swiper.slideNext();
+               });
+            },
+            onSlideChangeStart: function (swiper) {
+                if(swiper.isEnd){
+                    $('.cart-interest-list .right-arrow').addClass('inactive');
+                }else{
+                    $('.cart-interest-list .right-arrow').removeClass('inactive');
+                }
+                if(swiper.isBeginning){
+                    $('.cart-interest-list .left-arrow').addClass('inactive');
+                }else{
+                    $('.cart-interest-list .left-arrow').removeClass('inactive');
+                }
+            }
+        });
+    }
+}
 /********** End Swipers Functions ***********/
 /********** Pop ups ***********/
 function open_product_details(productId){
@@ -340,10 +406,12 @@ function open_listing_popup(listingType){
 
         $('#listing-popup').addClass('open');
         history.pushState(null, null, window.location.pathname + document.location.search + '#listing-' + listingType);
-     //   initialize_product_swiper();
+
+        initial_popup_listing_swiper();
+        resize_images_by_ratio();
         OpenPopup();
     }
-    
+
 }
 // function OpenYoutubeVideo(url, autoplay){
 //     autoplay = autoplay || false;

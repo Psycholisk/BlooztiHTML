@@ -233,7 +233,15 @@
     display: block;
     width: 100%;
     text-transform: uppercase;
-    padding: 0 10px 20px;
+    padding: 0 15px 25px;
+}
+.popup-description{
+    font-size: 0.82em;
+    .opensans;
+    display: block;
+    width: 100%;
+    padding: 15px 0 0;
+    color:#333;
 }
 @media (min-device-width: 769px) and (min-width: 769px) {
     :not(.handheld) .closepopup:hover,
@@ -308,7 +316,7 @@
     .product-info{
         max-width:~"calc(100% - 320px)";
         width:auto;
-        padding: 0 0 35px 20px;
+        padding: 0 0 55px 20px;
         position: relative;
         .title{
             font-size: 1.2em;
@@ -351,9 +359,42 @@
         }
     }
 }
-.listing-popup{
-    .popup-content{
-        width:1400px;
-        max-width: 100%;
+.popup{
+    .listing-popup{
+        padding-bottom:50px;
+        .popup-content{
+            width:1400px;
+            max-width: 100%;
+            position: relative;
+        }
+        .popup-listing-swiper{
+            width:~"calc(100% - 30px)";
+            margin:auto;
+            padding:0 0 10px;
+        }
+        .arrows{
+            width: 20px;
+            height: 32px;
+            top:~"calc(50% - 32px)";
+
+            &::before{
+                content: '\f104';
+                font-size: 50px;
+                .center-transform;
+            }
+            &.left-arrow{
+                left:-20px;
+            }
+            &.right-arrow{
+                right: -20px;
+                &::before{
+                    content: '\f105';
+                }
+            }
+            &.inactive{
+                opacity: 0.5;
+                pointer-events: none;
+            }
+        }
     }
 }

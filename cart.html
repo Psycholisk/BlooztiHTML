@@ -52,150 +52,167 @@
 
 
             <div id="container">
-                <!-- Filters -->
-                <aside class="products-filter default-padding">
+                <aside class="default-padding">
                     <div class="centered-container">
-                        <span class="page-title">Store</span>
+                        <span class="page-title">Cart</span>
+                        <!-- <span class="page-small-description">Your have <span class="cart-page-count">2</span> items in your cart</span> -->
                     </div>
-                    <div class="centered-container flex-container space-between">
-                        <div class="input-field keyword-input">
-                            <input class="input" placeholder="Keyword.." />
-                            <span class="add-keyword fonticon-before"></span>
+                </aside>
+                <section class="cart-listing default-padding ">
+                    <div class="centered-container flex-container space-between align-items-start">
+                        <div class="cart-container">
+                            <span class="cart-header">Your Cart (<span class="cart-header-count">2</span>)</span>
+                            <article class="cart-item flex-container space-between">
+                                <div class="frame">
+                                    <img src="images/small-article-9.jpg" alt="cart item 1">
+                                </div>
+                                <div class="cart-content">
+                                    <span class="price">$27.00</span>
+                                    <h1 class="title">Minion slim fit shirt</h1>
+                                    <ul class="attributes flex-container">
+                                        <li>
+                                            <span class="name">Size:</span>
+                                            <span class="value">XS</span>
+                                        </li>
+                                        <li>
+                                            <span class="name">Color:</span>
+                                            <span class="value">Yellow</span>
+                                        </li>
+                                        <li>
+                                            <span class="name">Type:</span>
+                                            <span class="value">Regular</span>
+                                        </li>
+                                        <li>
+                                            <span class="name">Quantity:</span>
+                                            <span class="value">1</span>
+                                        </li>
+                                    </ul>
+                                    <div class="cart-item-actions flex-container">
+                                        <span class="btn light-grey-btn remove">remove</span>
+                                        <span class="btn light-grey-btn edit">edit</span>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="cart-item flex-container space-between">
+                                <div class="frame">
+                                    <img src="images/small-article-10.jpeg" alt="cart item 1">
+                                </div>
+                                <div class="cart-content">
+                                    <span class="price">$52.00</span>
+                                    <h1 class="title">Minion slim fit shirt</h1>
+                                    <ul class="attributes flex-container">
+                                        <li>
+                                            <span class="name">Size:</span>
+                                            <span class="value">XS</span>
+                                        </li>
+                                        <li>
+                                            <span class="name">Color:</span>
+                                            <span class="value">Yellow</span>
+                                        </li>
+                                        <li>
+                                            <span class="name">Type:</span>
+                                            <span class="value">Regular</span>
+                                        </li>
+                                        <li>
+                                            <span class="name">Quantity:</span>
+                                            <span class="value">2</span>
+                                        </li>
+                                    </ul>
+                                    <div class="cart-item-actions flex-container">
+                                        <span class="btn light-grey-btn remove">remove</span>
+                                        <span class="btn light-grey-btn edit">edit</span>
+                                    </div>
+                                </div>
+                            </article>
                         </div>
-                        <div class="input-field checkbox-dropdown custom-dropdown add-arrow" onclick="toggle_custom_dropdown(this, event)">
-                            <span class="title">Type</span>
-                            <ul class="dropdown-content">
-                                <li>
-                                    <input class="input checkbox" type="checkbox" name="productType" id="product-type-1"/>
-                                    <label class="dropdown-field-label" for="product-type-1">T-shirt</label>
+                        <div class="cart-panel">
+                            <ul class="panel-item promo-panel">
+                                <li class="title">Promo Codes</li>
+                                <li class="content">
+                                    <div class="input-field inline-action">
+                                        <div class="input-wrapper">
+                                            <input type="text" class="input" placeholder="Promo code"/>
+                                            <span class="action btn enter-action">enter</span>
+                                        </div>
+                                    </div>
                                 </li>
-                                <li>
-                                    <input class="input checkbox" type="checkbox" name="productType" id="product-type-2"/>
-                                    <label class="dropdown-field-label" for="product-type-2">I-shirt</label>
+                            </ul>
+                            <ul class="panel-item summary-panel">
+                                <li class="title">Order Summary</li>
+                                <li class="content">
+                                    <span class="info-row flex-container space-between">
+                                        <span class="label text-uppercase">subtotal</span>
+                                        <span class="value">$79.00</span>
+                                    </span>
+                                    <span class="info-row flex-container space-between major">
+                                        <span class="label text-uppercase">total</span>
+                                        <span class="value">$79.00</span>
+                                    </span>
+                                    <a title="checkout" class="btn ghost-btn checkout" href="checkout.html">checkout</a>
+                                </li>
+                            </ul>
+                            <ul class="panel-item need-help-panel">
+                                <li class="title">Need Help?</li>
+                                <li class="content">
+                                    <ul class="help-list">
+                                        <li><a href="#">How is my order secure?</a></li>
+                                        <li><a href="#">What payment methods can I use?</a></li>
+                                        <li><a href="#">Using Coke Rewards?</a></li>
+                                        <li><a href="#">When will I get my order?</a></li>
+                                    </ul>
+                                    <a title="More help" class="more" href="faq.html">More help</a>
                                 </li>
                             </ul>
                         </div>
-                        <div class="input-field radio-dropdown custom-dropdown half-native add-arrow"  onclick="toggle_custom_dropdown(this, event)">
-                            <select class="select">
-                                <option value="name">Name</option>
-                                <option value="price">Price</option>
-                                <option value="latest">Latest</option>
-                                <option value="popular">Most Popular</option>
-                            </select>
-                            <ul class="dropdown-content">
-                                <li>
-                                    <input class="input checkbox" type="radio" name="sortType" id="sort-type-1" value="name" checked/>
-                                    <label class="dropdown-field-label" for="sort-type-1" >Name</label>
-                                </li>
-                                <li>
-                                    <input class="input checkbox" type="radio" name="sortType" id="sort-type-2" value="price"/>
-                                    <label class="dropdown-field-label" for="sort-type-2">Price</label>
-                                </li>
-                                <li>
-                                    <input class="input checkbox" type="radio" name="sortType" id="sort-type-3" value="latest"/>
-                                    <label class="dropdown-field-label" for="sort-type-3">Latest</label>
-                                </li>
-                                <li>
-                                    <input class="input checkbox" type="radio" name="sortType" id="sort-type-4" value="popular"/>
-                                    <label class="dropdown-field-label" for="sort-type-4">Most Popular</label>
-                                </li>
-                            </ul>
-                        </div>
                     </div>
-                </aside>
-                <aside class="labels-listing default-padding">
-                  <ul class="centered-container text-center">
-                    <li class="keyword-label">Coding<span class="remove-label" onclick="remove_filter_label(this)"></span></li>
-                    <li class="keyword-label">Gaming<span class="remove-label" onclick="remove_filter_label(this)"></span></li>
-                    <li class="keyword-label">T-shirt<span class="remove-label" onclick="remove_filter_label(this)" onclick="remove_filter_label(this)"></span></li>
-                    <li class="keyword-label">I-shirt<span class="remove-label" onclick="remove_filter_label(this)"></span></li>
-                  </ul>
-                </aside>
-                <section class="product-listing-container default-padding">
-
-                  <div class="centered-container flex-container space-between product-listing-content">
-                    <article class="small-article">
-                        <div class="frame resize-inner-image" onclick="open_product_details(0)">
-                            <img alt="" class="center-transform" src="images/small-article-1.jpg" />
-                        </div>
-                        <h1 class="title">White Star Wars shirt</h1>
-                        <span class="add-to-cart-action">Add To Cart</span>
-                        <span class="price">25.00$</span>
-                    </article>
-                    <article class="small-article">
-                      <div class="frame resize-inner-image" onclick="open_product_details(1)">
-                          <img alt="" class="center-transform" src="images/small-article-1.jpg" />
-                      </div>
-                      <h1 class="title">White Star Wars shirt</h1>
-                      <span class="add-to-cart-action">Add To Cart</span>
-                      <span class="price">25.00$</span>
-                    </article>
-                    <article class="small-article">
-                        <div class="frame resize-inner-image" onclick="open_product_details(2)">
-                            <img alt="" class="center-transform" src="images/small-article-1.jpg" />
-                        </div>
-                        <h1 class="title">White Star Wars shirt</h1>
-                        <span class="add-to-cart-action">Add To Cart</span>
-                        <span class="price">25.00$</span>
-                    </article>
-                    <article class="small-article">
-                      <div class="frame resize-inner-image" onclick="open_product_details(3)">
-                          <img alt="" class="center-transform" src="images/small-article-1.jpg" />
-                      </div>
-                      <h1 class="title">White Star Wars shirt</h1>
-                      <span class="add-to-cart-action">Add To Cart</span>
-                      <span class="price">25.00$</span>
-                    </article>
-                    <article class="small-article">
-                        <div class="frame resize-inner-image" onclick="open_product_details(4)">
-                            <img alt="" class="center-transform" src="images/small-article-1.jpg" />
-                        </div>
-                        <h1 class="title">White Star Wars shirt</h1>
-                        <span class="add-to-cart-action">Add To Cart</span>
-                        <span class="price">25.00$</span>
-                    </article>
-                      <article class="small-article">
-                          <div class="frame resize-inner-image" onclick="open_product_details(5)">
-                              <img alt="" class="center-transform" src="images/small-article-1.jpg" />
-                          </div>
-                          <h1 class="title">White Star Wars shirt</h1>
-                          <span class="add-to-cart-action">Add To Cart</span>
-                          <span class="price">25.00$</span>
-                      </article>
-                      <article class="small-article">
-                        <div class="frame resize-inner-image" onclick="open_product_details(6)">
-                            <img alt="" class="center-transform" src="images/small-article-1.jpg" />
-                        </div>
-                        <h1 class="title">White Star Wars shirt</h1>
-                        <span class="add-to-cart-action">Add To Cart</span>
-                        <span class="price">25.00$</span>
-                      </article>
-                      <article class="small-article">
-                          <div class="frame resize-inner-image" onclick="open_product_details(7)">
-                              <img alt="" class="center-transform" src="images/small-article-1.jpg" />
-                          </div>
-                          <h1 class="title">White Star Wars shirt</h1>
-                          <span class="add-to-cart-action">Add To Cart</span>
-                          <span class="price">25.00$</span>
-                      </article>
-                      <article class="small-article">
-                        <div class="frame resize-inner-image" onclick="open_product_details(8)">
-                            <img alt="" class="center-transform" src="images/small-article-1.jpg" />
-                        </div>
-                        <h1 class="title">White Star Wars shirt</h1>
-                        <span class="add-to-cart-action">Add To Cart</span>
-                        <span class="price">25.00$</span>
-                      </article>
-                      <article class="small-article">
-                          <div class="frame resize-inner-image" onclick="open_product_details(9)">
-                              <img alt="" class="center-transform" src="images/small-article-1.jpg" />
-                          </div>
-                          <h1 class="title">White Star Wars shirt</h1>
-                          <span class="add-to-cart-action">Add To Cart</span>
-                          <span class="price">25.00$</span>
-                      </article>
-                  </div>
                 </section>
+
+                <section class="cart-interest-list default-padding one-row-listing">
+                    <h1 class="home-section-title">YOU MIGHT ALSO LIKE</h1>
+                    <div class="centered-container flex-container space-between">
+                        <article class="swiper-slide small-article">
+                            <div class="frame resize-inner-image" onclick="open_product_details(0)">
+                                <img alt="" class="center-transform" src="images/small-article-1.jpg" />
+                            </div>
+                            <h1 class="title">White Star Wars shirt</h1>
+                            <span class="add-to-cart-action">Add To Cart</span>
+                            <span class="price">25.00$</span>
+                        </article>
+                        <article class="swiper-slide small-article">
+                          <div class="frame resize-inner-image" onclick="open_product_details(1)">
+                              <img alt="" class="center-transform" src="images/small-article-2.jpg" />
+                          </div>
+                          <h1 class="title">White Star Wars shirt</h1>
+                          <span class="add-to-cart-action">Add To Cart</span>
+                          <span class="price">25.00$</span>
+                        </article>
+                        <article class="swiper-slide small-article">
+                            <div class="frame resize-inner-image" onclick="open_product_details(2)">
+                                <img alt="" class="center-transform" src="images/small-article-3.jpg" />
+                            </div>
+                            <h1 class="title">White Star Wars shirt</h1>
+                            <span class="add-to-cart-action">Add To Cart</span>
+                            <span class="price">25.00$</span>
+                        </article>
+                        <article class="swiper-slide small-article">
+                          <div class="frame resize-inner-image" onclick="open_product_details(3)">
+                              <img alt="" class="center-transform" src="images/small-article-4.jpg" />
+                          </div>
+                          <h1 class="title">White Star Wars shirt</h1>
+                          <span class="add-to-cart-action">Add To Cart</span>
+                          <span class="price">25.00$</span>
+                        </article>
+                        <article class="small-article swiper-slide">
+                          <div class="frame resize-inner-image" onclick="open_product_details(3)">
+                              <img alt="" class="center-transform" src="images/small-article-5.jpg" />
+                          </div>
+                          <h1 class="title">White Star Wars shirt</h1>
+                          <span class="add-to-cart-action">Add To Cart</span>
+                          <span class="price">25.00$</span>
+                        </article>
+                    </div>
+                </section>
+
                 <aside class="text-stripe text-center flex-container align-items-center">
                     <span class="text">Have any questions or concerns?<br><a title="FAQ" class="link" href="faq.html">Check our FAQ</a></span>
                 </aside>
