@@ -391,7 +391,7 @@ function init_interest_swiper(){
 function open_product_details(productId){
     if(productId != undefined && !isNaN(parseInt(productId))){
 
-        $('.popup .popupcontainer').removeClass('open');
+        $('.popup .popup-parent-container').removeClass('open');
 
         $('#product-details-popup').addClass('open');
         history.pushState(null, null, window.location.pathname + document.location.search + '#productId-' + productId);
@@ -402,7 +402,7 @@ function open_product_details(productId){
 function open_listing_popup(listingType){
     if(listingType != undefined && listingType != ""){
 
-        $('.popup .popupcontainer').removeClass('open');
+        $('.popup .popup-parent-container').removeClass('open');
 
         $('#listing-popup').addClass('open');
         history.pushState(null, null, window.location.pathname + document.location.search + '#listing-' + listingType);
@@ -420,7 +420,7 @@ function open_listing_popup(listingType){
 //         if(url.indexOf("youtube.com") > -1 || url.indexOf("youtu.be") > -1){
 //             videoId = extractVideoID(url);
 //         }
-//         $('.popup .popupcontainer').removeClass('open');
+//         $('.popup .popup-parent-container').removeClass('open');
 //         $('#video-iframe').attr('src', 'https://www.youtube.com/embed/' + videoId + (autoplay ? '?autoplay=1' : ''));
 //         $('#youtubepopup').addClass('open');
 //         history.pushState(null, null, window.location.pathname + document.location.search + '#vidId-' + videoId);

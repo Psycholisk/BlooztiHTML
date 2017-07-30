@@ -8,6 +8,23 @@
     overflow-y: auto;
     padding-top:40px;
     padding-bottom:40px;
+    visibility: hidden;
+    pointer-events: none;
+    background: rgba(170, 170, 170, .72);
+    -webkit-transition: opacity .3s, visibility 0s .3s;
+    -moz-transition: opacity .3s, visibility 0s .3s;
+    -ms-transition: opacity .3s, visibility 0s .3s;
+    -o-transition: opacity .3s, visibility 0s .3s;
+    z-index: 35;
+    &.open{
+        opacity: 1;
+        visibility: visible;
+        pointer-events: fill;
+        -webkit-transition: opacity .6s;
+        -moz-transition: opacity .6s;
+        -ms-transition: opacity .6s;
+        -o-transition: opacity .6s;
+    }
 }
 //Main purpose is to wrap the popup width so the entrace doesn't take the full screen width
 // .popup-absolute-container{
@@ -19,6 +36,15 @@
 //     -ms-transform: translateX(-50%);
 //     -o-transform: translateX(-50%);
 // }
+.popup-parent-container{
+    display: none;
+    position: relative;
+    margin: auto;
+    max-width: 100%;
+    &.open{
+        display: block;
+    }
+}
 .popup {
     position: relative;
     // position: absolute;
@@ -26,10 +52,12 @@
     // top: 150px;
     // left: 50%;
     width:auto;
-    max-width: ~"calc(100% - 20px)";
+    max-width: 100%;
     margin:auto;
     visibility: hidden;
     pointer-events: none;
+    padding-left:10px;
+    padding-right:10px;
     // -webkit-transform: translateX(-50%);
     // -moz-transform: translateX(-50%);
     // -ms-transform: translateX(-50%);
@@ -42,7 +70,7 @@
     font-size: 18px;
 }
 .popup .popupcontainer {
-    display: none;
+  //  display: none;
     max-width: 100%;
     margin:auto;
     opacity: 0;
@@ -294,6 +322,9 @@
 .product-details-popup{
     font-size: 18px;
     width:770px;
+    .popupcontainer{
+
+    }
     .product-swiper{
         width:320px;
         height:372px;
@@ -387,9 +418,11 @@
 }
 .popup{
     .listing-popup{
-        padding-bottom:50px;
+        width:1500px;
+        .popupcontainer{
+            padding-bottom:50px;
+        }
         .popup-content{
-            width:1400px;
             max-width: 100%;
             position: relative;
         }
