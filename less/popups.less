@@ -1,15 +1,39 @@
-.popup {
+.popup-scrollable-container{
     position: absolute;
-    top: 150px;
-    left: 50%;
+    top:0;
+    left:0;
+    width:100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top:40px;
+    padding-bottom:40px;
+}
+//Main purpose is to wrap the popup width so the entrace doesn't take the full screen width
+// .popup-absolute-container{
+//     position: absolute;
+//     top:0;
+//     left: 50%;
+//     -webkit-transform: translateX(-50%);
+//     -moz-transform: translateX(-50%);
+//     -ms-transform: translateX(-50%);
+//     -o-transform: translateX(-50%);
+// }
+.popup {
+    position: relative;
+    // position: absolute;
+    top: 0 !important;
+    // top: 150px;
+    // left: 50%;
     width:auto;
     max-width: ~"calc(100% - 20px)";
+    margin:auto;
     visibility: hidden;
     pointer-events: none;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
+    // -webkit-transform: translateX(-50%);
+    // -moz-transform: translateX(-50%);
+    // -ms-transform: translateX(-50%);
+    // -o-transform: translateX(-50%);
     -webkit-transition: visibility 0s .4s;
     -moz-transition: visibility 0s .4s;
     -ms-transition: visibility 0s .4s;
@@ -20,6 +44,7 @@
 .popup .popupcontainer {
     display: none;
     max-width: 100%;
+    margin:auto;
     opacity: 0;
     background: #fff;
     padding: 65px 50px 42px;
@@ -268,6 +293,7 @@
 //...........NEW CODE...............//
 .product-details-popup{
     font-size: 18px;
+    width:770px;
     .product-swiper{
         width:320px;
         height:372px;

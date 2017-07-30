@@ -1,8 +1,10 @@
+
+var fix_body_top_value = 0;
 function FIX_BODY() {
-   temp_top = parseInt($(document).scrollTop());
+   fix_body_top_value = parseInt($(document).scrollTop());
    var bodyClasses = $('body').attr('class');
    $('body').addClass('fix-position');
-   $('body').css('top', -temp_top + 'px');
+   $('body').css('top', -fix_body_top_value + 'px');
    var classes = bodyClasses.split(' ');
    for (var i = 0; i < classes.length; i++) {
        $('body').addClass(classes[i]);
@@ -14,72 +16,70 @@ function UNFIX_BODY() {
    $('body').removeClass('fix-position');
    $('body').css('top', 'auto');
 
-   $('html,body').animate({ scrollTop: temp_top }, 0);
-   temp_top = 0;
+   $('html,body').animate({ scrollTop: fix_body_top_value }, 0);
+   fix_body_top_value = 0;
 }
 
 
 function OpenPopup(){
     screen_position = $(document).scrollTop();
     screenbottom = $(document).scrollTop() + $(window).height();
-    popup_position = screen_position;
-  //  FIX_BODY();
-    if($('.popup').hasClass('open')){
-        popupCurrentPosition = $('.popup').offset().top;
-        if(popup_position > popupCurrentPosition - 20){
-            $('html,body').animate({ scrollTop: popupCurrentPosition - 80 }, 300);
-        }
+    popup_position = 0;
+    $('.popup').css('margin-top', 0);
+    $('.popup-scrollable-container').css('top', screen_position);
+    $('.popup-scrollable-container').css('bottom', screenbottom);
+
+    popup_height = $('.popupcontainer.open').outerHeight(true);
+    wrapper_height = $('.popup-scrollable-container').height() - 40;
+    if(popup_height >= wrapper_height){
+        $('#wrapper').css('padding-bottom', (popup_height + 40 - wrapper_height));
+        $('#wrapper').addClass('padded');
+
+        $('html,body').animate({ scrollTop: 0 }, 300);
+        $('.popup').css('margin-top', 0);
+
     }else{
-        popup_height = $('.popupcontainer.open').outerHeight(true);
-        wrapper_height = $('#wrapper').height();
-        if(popup_height >= wrapper_height - 40){
-            $('#wrapper').css('padding-bottom', (popup_height + 40 - wrapper_height));
-            $('#wrapper').addClass('padded');
 
-            $('html,body').animate({ scrollTop: 0 }, 300);
-            $('.popup').css('top', 20);
+        popup_position += ($(window).height() / 2);
+        popup_position -= (popup_height / 2);
 
+        if($(window).width() > 750){
+            if(screen_position - popup_position > - 50){
+                popup_position = screen_position + 50;
+            }
         }else{
-
-            popup_position += ($(window).height() / 2);
-            popup_position -= (popup_height / 2);
-
-            if($(window).width() > 750){
-                if(screen_position - popup_position > - 50){
-                    popup_position = screen_position + 50;
-                }
-            }else{
-                if(screen_position - popup_position > - 100){
-                    popup_position = screen_position + 100;
-                }
+            if(screen_position - popup_position > - 100){
+                popup_position = screen_position + 100;
             }
-            total_height = popup_height + popup_position;
-
-
-             if (total_height >= wrapper_height) {
-                popup_position = wrapper_height - popup_height - 70;
-            }
-
-            if(popup_position < screen_position - 20){
-                $('html,body').animate({ scrollTop: popup_position - 20 }, 300);
-            }
-
-            if($('body').hasClass('subpage-default-header')){
-                popup_position -= 120;
-                if(popup_position < 5){
-                    popup_position = 5;
-                }
-            }
-            $('.popup').css('top', popup_position);
-
         }
-        $('.popupoverlay').addClass('open');
-        $('.popup').addClass('open');
+        total_height = popup_height + popup_position;
+
+
+         if (total_height >= wrapper_height) {
+            popup_position = wrapper_height - popup_height - 70;
+        }
+
+        if(popup_position < screen_position - 20){
+            $('html,body').animate({ scrollTop: popup_position - 20 }, 300);
+        }
+
+        if($('body').hasClass('subpage-default-header')){
+            popup_position -= 120;
+            if(popup_position < 5){
+                popup_position = 5;
+            }
+        }
+        $('.popup').css('margin-top', popup_position);
+
     }
+    FIX_BODY();
+    $('.popupoverlay').addClass('open');
+    $('.popup').addClass('open');
+
 }
 
 function ClosePopup(){
-  //  UNFIX_BODY();
+    UNFIX_BODY();
     $('#wrapper').removeClass('padded');
     ResetContainerInputs('.popupcontainer.open');
     var popuphash = window.location.hash.substr(1);
@@ -416,3 +416,90 @@ function LoadSocialMedia() {
     }
 }
 /************ SOCIAL BUTTONS ***********/
+
+
+/*********** OLD CODE **************/
+
+//** Open and close pppopup: changed top to margin top after adding the scrollable container
+//** Alsa added FIX and UNFIX functions to fix the body
+// function OpenPopup(){
+//     screen_position = $(document).scrollTop();
+//     screenbottom = $(document).scrollTop() + $(window).height();
+//     popup_position = screen_position;
+//   //  FIX_BODY();
+//     if($('.popup').hasClass('open')){
+//         popupCurrentPosition = $('.popup').offset().top;
+//         if(popup_position > popupCurrentPosition - 20){
+//             $('html,body').animate({ scrollTop: popupCurrentPosition - 80 }, 300);
+//         }
+//     }else{
+//         popup_height = $('.popupcontainer.open').outerHeight(true);
+//         wrapper_height = $('#wrapper').height();
+//         if(popup_height >= wrapper_height - 40){
+//             $('#wrapper').css('padding-bottom', (popup_height + 40 - wrapper_height));
+//             $('#wrapper').addClass('padded');
+//
+//             $('html,body').animate({ scrollTop: 0 }, 300);
+//             $('.popup').css('top', 20);
+//
+//         }else{
+//
+//             popup_position += ($(window).height() / 2);
+//             popup_position -= (popup_height / 2);
+//
+//             if($(window).width() > 750){
+//                 if(screen_position - popup_position > - 50){
+//                     popup_position = screen_position + 50;
+//                 }
+//             }else{
+//                 if(screen_position - popup_position > - 100){
+//                     popup_position = screen_position + 100;
+//                 }
+//             }
+//             total_height = popup_height + popup_position;
+//
+//
+//              if (total_height >= wrapper_height) {
+//                 popup_position = wrapper_height - popup_height - 70;
+//             }
+//
+//             if(popup_position < screen_position - 20){
+//                 $('html,body').animate({ scrollTop: popup_position - 20 }, 300);
+//             }
+//
+//             if($('body').hasClass('subpage-default-header')){
+//                 popup_position -= 120;
+//                 if(popup_position < 5){
+//                     popup_position = 5;
+//                 }
+//             }
+//             $('.popup').css('top', popup_position);
+//
+//         }
+//         //FIX_BODY();
+//         $('.popupoverlay').addClass('open');
+//         $('.popup').addClass('open');
+//     }
+// }
+//
+// function ClosePopup(){
+//     //UNFIX_BODY();
+//     $('#wrapper').removeClass('padded');
+//     ResetContainerInputs('.popupcontainer.open');
+//     var popuphash = window.location.hash.substr(1);
+//
+//     if(popuphash.indexOf("productId") > -1 ){
+//         currenthash = "";
+//         history.pushState(null, null, window.location.pathname + document.location.search);
+//     }
+//     if(popuphash.indexOf("vidId") > -1 ){
+//         currenthash = "";
+//         history.pushState(null, null, window.location.pathname + document.location.search);
+//         setTimeout(function(){
+//             $('#video-iframe').attr('src', '');
+//         },200);
+//     }
+//     $('.popup').removeClass('open');
+//    // $('.popupcontainer').removeClass('open');
+//     $('.popupoverlay').removeClass('open');
+// }
