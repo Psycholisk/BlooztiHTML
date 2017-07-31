@@ -390,23 +390,24 @@ function init_interest_swiper(){
 /********** Pop ups ***********/
 function open_product_details(productId){
     if(productId != undefined && !isNaN(parseInt(productId))){
-
+        save_popup_state();
         $('.popup .popup-parent-container').removeClass('open');
 
         $('#product-details-popup').addClass('open');
-        history.pushState(null, null, window.location.pathname + document.location.search + '#productId-' + productId);
+        // history.pushState(null, null, window.location.pathname + document.location.search + '#productId-' + productId);
+        SetHash('productId-' + productId);
         initialize_product_swiper();
         OpenPopup();
     }
 }
 function open_listing_popup(listingType){
     if(listingType != undefined && listingType != ""){
-
+        save_popup_state();
         $('.popup .popup-parent-container').removeClass('open');
 
         $('#listing-popup').addClass('open');
-        history.pushState(null, null, window.location.pathname + document.location.search + '#listing-' + listingType);
-
+        // history.pushState(null, null, window.location.pathname + document.location.search + '#listing-' + listingType);
+        SetHash('listing-' + listingType);
         initial_popup_listing_swiper();
         resize_images_by_ratio();
         OpenPopup();

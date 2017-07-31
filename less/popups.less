@@ -233,23 +233,33 @@
     -webkit-transition: opacity .3s;
     -moz-transition: opacity .3s;
     -ms-transition: opacity .3s;
-    -o-transition: opacity .3s
+    -o-transition: opacity .3s;
+    &::before, &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        top: 50%;
+        background: grey;
+        position: absolute
+    }
+    &::after {
+        height: 100%;
+        width: 1px;
+        top: 0;
+        left: 50%
+    }
 }
-.closepopup::before,
-.closepopup::after {
-    content: '';
-    width: 100%;
-    height: 1px;
-    top: 50%;
-    background: grey;
-    position: absolute
+.back-popup{
+    text-transform: uppercase;
+    .opensans-light;
+    text-align: center;
+    width:80px;
+    display: block;
+    margin:20px auto 0;
+    font-size: 1.05em;
+    cursor: pointer;
 }
-.closepopup::after {
-    height: 100%;
-    width: 1px;
-    top: 0;
-    left: 50%
-}
+
 .popupoverlay {
     width: 100%;
     height: 100%;
